@@ -1,0 +1,548 @@
+/**********helper classes************/
+body{
+    font-family: 'Source Sans Pro', 'Droid Arabic Naskh','maghrabi' , tahoma; 
+}
+@font-face { 
+font-family: "FontAwesome";
+src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/fonts/fontawesome-webfont.woff");
+}
+.container {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+/************home page**********/
+div#header {
+    background-color: rgba(226, 226, 226, 0);
+    padding: 15px;
+    border: 1.5px solid #39bfea;
+    border-radius: 6px;
+    padding-bottom: 0px;
+}
+div#header nav {
+    width: 100%;
+    display: inline-block;
+}
+nav ul li,.footer ul li {
+    float: left;
+    list-style: none;
+    margin: 3px;
+    padding: 20px;
+}
+nav ul {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 0px;
+    float: right;
+}
+nav ul li a {
+    color: #39BFEA;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 800;
+    padding-bottom: 15px;
+}
+.logo {
+    width: 15%;
+    display: inline-block;
+    float: left;
+}
+nav img {
+    max-width: 75%;
+    border-radius: 6px;
+}
+h3.sub-title {
+    float: left;
+   color: rgb(88, 6, 78);
+    margin-top: 40px;
+}
+nav ul li a:active, nav ul li a:hover {
+    border-bottom: 2px solid #39BFEA;
+}
+nav ul li a.active{
+    border-bottom: 2px solid #39BFEA;
+}
+h2.title {
+    margin: 0px;
+    font-size: 13px;
+    margin-left: 27px;
+    color: rgba(0, 0, 0, 0.45);
+}
+/*********slider*************/
+.slider .slide:target {
+	z-index: 100;
+}
+.slide {
+	position:absolute;
+	height:100%;
+	width:100%;
+}
+.slider {
+	height:100vh;
+	position: relative;
+}
+a.prev,a.next {
+	height:30px;
+	position:absolute;
+	width:43px;
+	top:50%;
+	margin-top:-30px;
+	opacity:0.6;
+	text-indent:-99999px;
+}
+a.next {
+    margin-right: 8px;
+}
+a.prev:hover,a.next:hover {
+	opacity:1;
+}
+.prev {
+	left:6px;
+	background: #000 url('../images/previous.png') no-repeat;
+}
+.next {
+	right:0;
+	background: #000 url('../images/next.png') no-repeat ;
+}
+.slider {
+	height:415px;
+	position: relative;
+    display: block;
+}
+
+.slider .slide:target {
+	z-index: 100;
+}
+.slider ul li {
+    list-style: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: -39px;
+}
+.slider ul li img {
+    width: 100%;
+    height: 400px;
+}
+/********* End slider*************/
+.head h2 span {
+    color: #000;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.head {
+    text-align: center;
+    line-height: 15px;
+    width: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.con-left {
+    width: 550px;
+    float: left;
+    margin-right: 50px
+}
+.con-right {
+    width: 500px;
+    display: inline-block;
+}
+.con-right img {
+    width: 102%;
+    margin-top: 15px;
+    border: 1px solid rgba(188, 188, 188, 0.41);
+    padding: 10px;
+    border-bottom: 2px solid #39bfea;
+    border-radius: 5px;
+    height: 320px;
+}
+.con-left p {
+    font-size: 15px;
+    color: rgba(114, 114, 114, 0.92);
+    line-height: 30px;
+    text-align: justify;
+    border: 1px solid rgba(188, 188, 188, 0.41);
+    padding: 10px;
+    border-bottom: 2px solid #39bfea;
+    height: 320px;
+}
+.con-left p a {
+    font-size: 14px;
+    color: #39BFEA;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+div#content {
+    clear: both;
+    background: url('../images/threeline.png') repeat-x bottom;
+    padding-bottom: 20px;
+}
+div#content1 {
+    padding-bottom: 30px;
+}
+.image {
+    display: inline-block;
+    position: relative;
+    width: 24%;
+    height: 265px;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 15px;
+    border: 1px solid rgba(188, 188, 188, 0.42);
+    border-radius: 5px;
+    border-bottom: 2px solid rgba(255, 0, 0, 0.18);
+}
+.image img {
+    padding: 10px;
+    max-width: 100%;
+    padding-bottom: 0px;
+    min-height: 216px;
+}
+.caption {
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: rgba(0,0,0,.8);
+  z-index: 2;
+  font-weight: 300;
+  transition: all .5s;
+}
+.caption-num {
+  background: none;
+  color: #fff;
+  font-size: 20px;
+  opacity: 0;
+  background-color: #39bfea;
+ text-align: center;
+}
+.image-num {
+    width: 94%;
+}
+.image-container:hover .image-num img {
+  transform: scale(1.5) rotate(-10deg);
+  transition: all .5s;
+}
+.image-container:hover .caption-num {
+ opacity: 1;
+ transform: translateY(-19%);
+}
+/************ End home page**********/
+/************History page********/
+.history-menu {
+    
+    text-align: center;
+    position: fixed;
+    right: 487px;
+    top: 485px;
+  
+
+}
+div#early {
+    margin-top: 66px;
+}
+.history-menu ul {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgba(57, 191, 234, 0.68);
+    text-align: center;
+    padding: 0px;
+}
+.history-menu ul li {
+    list-style: none;
+    float: left;
+    padding: 15px;
+}
+.history-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 800;
+}
+.left {
+    margin: 0px;
+}
+.left h3 {
+    text-align: left;
+    padding-left: 20px;
+    color: #39bfea;
+}
+.awards h3 {
+    font-weight: 100;
+}
+.awards {
+    font-size: 11px;
+    color: rgba(114, 114, 114, 0.92);
+    padding: 5px;
+    text-align: justify;
+    margin-top: 15px;
+    padding-bottom: 0px;
+    margin-bottom: 21px;
+    line-height: 15px;
+    border: 1px solid rgba(188, 188, 188, 0.41);
+    border-bottom: 2px solid #39bfea;
+}
+.con {
+    font-size: 15px;
+    color: rgba(114, 114, 114, 0.92);
+    padding: 5px;
+    text-align: justify;
+    margin-top: 15px;
+    padding-bottom: 0px;
+    margin-bottom: 21px;
+    line-height: 26px;
+    border: 1px solid rgba(188, 188, 188, 0.41);
+    border-bottom: 2px solid #39bfea;
+}
+
+img.img-sub{
+max-width: 200px;
+}
+.con-right2 {
+    max-width: 20% !important;
+    margin-left: 52px
+}
+.con-right2 img {
+    max-height: 160px;
+}
+/************ End History page********/
+/*****contactus page ******/
+.contact-slider{
+    background-image: url('../images/jony17.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 298px;
+    margin-left: 1px;
+    margin-right: 2px;
+    margin-top: 18px;
+}
+.contact-slider2{
+     background-image: url('../images/ishaan2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 298px;
+    margin-left: 1px;
+    margin-right: 2px;
+    margin-top: 18px;
+}
+.msg {
+    background: none !important;
+}
+.message {
+    width: 650px;
+    display: inline-block;
+    float: left;
+    margin-right: 50px;
+}
+.title-border {
+    color: #39BFEA;
+    font-size: 15px;
+}
+.title-border{
+    background: url('../images/threeline.png') repeat-x bottom;
+    padding-bottom: 15px;
+    height: 20px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+form.form {
+    margin-top: 40px;
+}
+.form input[type="text"],.form input[type="email"],.form textarea {
+    width: 45%;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 30px;
+    border-color: #fff;
+    border: 2px solid rgba(204, 204, 204, 0.63);
+    border-bottom: 2px solid #39bfea;
+    padding-bottom: 16px;
+}
+.form .sub{
+    width: 95% !important;
+}
+.form textarea {
+    width: 95% !important;
+}
+input[type="submit"] {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 0px;
+    color: #fff;
+    background-color: #39BFEA;
+    border: 1px solid #fff;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+/******Get In Touch*******/
+.info {
+    width: 500px;
+    display: inline-block;
+    margin-left: 50px;
+}
+ul .Lstyle {
+    list-style: none;
+}
+.Lstyle{
+    list-style:none;
+}
+.sol li{
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.sol li i {
+    font-size: 18px;
+    line-height: 30px;
+    color: #727272;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 8px;
+}
+.infoList li {
+    margin-left: -33px;
+    padding: 15px;
+    color: grey;
+    font-size: 15px;
+}
+.infoList li i {
+    margin-right: 10px;
+}
+ul#social {
+    padding: 0px;
+    margin-top: 82px;
+}
+.infoList li a {
+    color: #39BFEA;
+    text-decoration: none;
+}
+.sol li i:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+/********google map*************/
+iframe{
+    border: 1px solid rgba(188, 188, 188, 0.43);
+    border-radius: 6px;
+}
+/*****End contactus page ******/
+
+
+/********contribution**********/
+.conribution img {
+    max-width: 100%;
+}
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+        margin-bottom: -362px;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 15px;
+	left: 0;
+	width: 100%;
+	height: 50%;
+}
+/******** End contribution**********/
+/********Refference***********/
+span.ref a {
+    float: right;
+    margin-top: 22px;
+    color: #1F4994;
+}
+/********End Of Refference********/
+/**********About Me*************/
+.me{
+    margin-top: 20px;
+}
+.name {
+    margin-left: 35px;
+}
+.name,.info1 {
+    display: inline-block;
+    width: 37%;
+    background-color: #fff;
+    margin-bottom: 30px;
+    border-color: #fff;
+    border: 2px solid rgba(204, 204, 204, 0.63);
+    border-bottom: 2px solid rgba(255, 0, 0, 0.18);
+    border-radius: 10px;
+    color: #39bfea;
+    float: left;
+    margin-top: 60px;
+    
+}
+.info1{
+    float: right;
+    margin-right: 46px;
+    margin-left: 0px;
+}
+.name p,.info1 p {
+    font-size: 18px;
+    padding: 20px;
+    margin: 0px;
+    text-align: center;
+}
+.photo {
+    width: 19%;
+    display: inline-block;
+}
+.photo img {
+    max-width: 200px;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+#early2,#early3{
+    margin-top: 20px;
+}
+.info3{
+    margin-left: 0px;
+}
+span.abj {
+    font-size: 18px;
+    color: #39bfea;
+}
+#early2 ul.infoList.Lstyle li i {
+    color: #39BFEA;
+}
+/**********End About Me*********/
+
+/************footer*********/
+.footer {
+    background-color: rgba(57, 191, 234, 0.9);
+    margin-right: 20px;
+    margin-top: 100px;
+}
+.footer ul {
+    display: inline-block;
+        float: right;
+}
+.footer ul li {
+    padding: 10px !important;
+}
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+        font-size: 20px;
+}
+.clear {
+    clear: both;
+}
+.footer h2{
+    color: #fff;
+    float: left;
+    margin-left: 25px;
+
+}
+/************ End footer*********/
