@@ -14,16 +14,13 @@ src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/fonts/fontaw
 div#header {
     background-color: rgba(226, 226, 226, 0);
     padding: 15px;
-    border: 1.5px solid #39bfea;
     border-radius: 6px;
-    padding-bottom: 0px;
 }
 div#header nav {
     width: 100%;
     display: inline-block;
 }
 nav ul li,.footer ul li {
-    float: left;
     list-style: none;
     margin: 3px;
     padding: 20px;
@@ -50,10 +47,16 @@ nav img {
     max-width: 75%;
     border-radius: 6px;
 }
+ul.nav.navbar-nav li {
+    padding: 0px;
+}
 h3.sub-title {
     float: left;
    color: rgb(88, 6, 78);
-    margin-top: 40px;
+    margin-top: 36px;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 0px;
 }
 nav ul li a:active, nav ul li a:hover {
     border-bottom: 2px solid #39BFEA;
@@ -68,60 +71,129 @@ h2.title {
     color: rgba(0, 0, 0, 0.45);
 }
 /*********slider*************/
-.slider .slide:target {
-	z-index: 100;
-}
-.slide {
-	position:absolute;
-	height:100%;
-	width:100%;
-}
+
+/********************************/
+/*       Fade Bs-carousel       */
+/********************************/
 .slider {
-	height:100vh;
-	position: relative;
+    margin-top: 15px;
 }
-a.prev,a.next {
-	height:30px;
-	position:absolute;
-	width:43px;
-	top:50%;
-	margin-top:-30px;
-	opacity:0.6;
-	text-indent:-99999px;
+.fade-carousel {
+    position: relative;
+    height: 450px;
 }
-a.next {
-    margin-right: 8px;
+.fade-carousel .carousel-inner .item {
+    height: 450px;
 }
-a.prev:hover,a.next:hover {
-	opacity:1;
+.fade-carousel .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
 }
-.prev {
-	left:6px;
-	background: #000 url('../images/previous.png') no-repeat;
-}
-.next {
-	right:0;
-	background: #000 url('../images/next.png') no-repeat ;
-}
-.slider {
-	height:415px;
-	position: relative;
-    display: block;
+.fade-carousel .carousel-indicators > li.active {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
 }
 
-.slider .slide:target {
-	z-index: 100;
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
 }
-.slider ul li {
-    list-style: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-left: -39px;
+.hero h1 {
+    font-size: 6em;    
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
 }
-.slider ul li img {
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s; 
+        -ms-transition: 2s all ease-in-out .1s; 
+         -o-transition: 2s all ease-in-out .1s; 
+            transition: 2s all ease-in-out .1s; 
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s; 
+        -ms-transition: 2s all ease-in-out .1s; 
+         -o-transition: 2s all ease-in-out .1s; 
+            transition: 2s all ease-in-out .1s;    
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+    position: absolute;
     width: 100%;
-    height: 400px;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .7;
+}
+
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+}
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1, 
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+  background-image: url(../images/ive3.jpg); 
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(../images/jony16.jpg);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(../images/jony26.jpg);
+}
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }    
+}
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 4em; }    
 }
 /********* End slider*************/
 .head h2 span {
@@ -129,31 +201,28 @@ a.prev:hover,a.next:hover {
     font-size: 14px;
     text-transform: capitalize;
 }
+.head h2 {
+    font-size: 20px;
+    font-weight: 800;
+}
 .head {
     text-align: center;
     line-height: 15px;
-    width: 35%;
+    width: 45%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-.con-left {
-    width: 550px;
-    float: left;
-    margin-right: 50px
-}
-.con-right {
-    width: 500px;
-    display: inline-block;
+    margin-bottom: 5px;
+    position: relative;
+        clear: both;
 }
 .con-right img {
     width: 102%;
-    margin-top: 15px;
     border: 1px solid rgba(188, 188, 188, 0.41);
     padding: 10px;
     border-bottom: 2px solid #39bfea;
-    border-radius: 5px;
-    height: 320px;
+    max-height: 353px;
+        min-height: 353px;
 }
 .con-left p {
     font-size: 15px;
@@ -163,7 +232,8 @@ a.prev:hover,a.next:hover {
     border: 1px solid rgba(188, 188, 188, 0.41);
     padding: 10px;
     border-bottom: 2px solid #39bfea;
-    height: 320px;
+           min-height: 353px;
+    max-height: 353px;
 }
 .con-left p a {
     font-size: 14px;
@@ -175,20 +245,14 @@ div#content {
     clear: both;
     background: url('../images/threeline.png') repeat-x bottom;
     padding-bottom: 20px;
+    display: inline-block;
 }
 div#content1 {
     padding-bottom: 30px;
 }
 .image {
-    display: inline-block;
-    position: relative;
-    width: 24%;
-    height: 265px;
     overflow: hidden;
-    background: #fff;
-    margin-top: 15px;
     border: 1px solid rgba(188, 188, 188, 0.42);
-    border-radius: 5px;
     border-bottom: 2px solid rgba(255, 0, 0, 0.18);
 }
 .image img {
@@ -215,7 +279,7 @@ div#content1 {
  text-align: center;
 }
 .image-num {
-    width: 94%;
+    width: 100%;
 }
 .image-container:hover .image-num img {
   transform: scale(1.5) rotate(-10deg);
@@ -237,7 +301,7 @@ div#content1 {
 
 }
 div#early {
-    margin-top: 66px;
+       display: inline-block;
 }
 .history-menu ul {
     display: inline-block;
@@ -269,13 +333,14 @@ div#early {
 }
 .awards h3 {
     font-weight: 100;
+    font-size: 12px;
+    margin-bottom: 2px;
 }
 .awards {
     font-size: 11px;
     color: rgba(114, 114, 114, 0.92);
     padding: 5px;
     text-align: justify;
-    margin-top: 15px;
     padding-bottom: 0px;
     margin-bottom: 21px;
     line-height: 15px;
@@ -300,10 +365,11 @@ max-width: 200px;
 }
 .con-right2 {
     max-width: 20% !important;
-    margin-left: 52px
 }
 .con-right2 img {
     max-height: 160px;
+     margin-bottom: 20px;
+         min-height: 100px;
 }
 /************ End History page********/
 /*****contactus page ******/
@@ -315,6 +381,9 @@ max-width: 200px;
     margin-left: 1px;
     margin-right: 2px;
     margin-top: 18px;
+    min-height: 300px;
+ max-height: 300px;
+    background-size: 100% 100%
 }
 .contact-slider2{
      background-image: url('../images/ishaan2.jpg');
@@ -329,10 +398,7 @@ max-width: 200px;
     background: none !important;
 }
 .message {
-    width: 650px;
     display: inline-block;
-    float: left;
-    margin-right: 50px;
 }
 .title-border {
     color: #39BFEA;
@@ -341,7 +407,8 @@ max-width: 200px;
 .title-border{
     background: url('../images/threeline.png') repeat-x bottom;
     padding-bottom: 15px;
-    height: 20px;
+    height: 40px;
+ margin-bottom: 15px;
     font-size: 14px;
     text-transform: capitalize;
 }
@@ -349,7 +416,7 @@ form.form {
     margin-top: 40px;
 }
 .form input[type="text"],.form input[type="email"],.form textarea {
-    width: 45%;
+    width: 47%;
     border-radius: 5px;
     padding: 10px;
     background-color: #fff;
@@ -381,9 +448,7 @@ input[type="submit"] {
 }
 /******Get In Touch*******/
 .info {
-    width: 500px;
     display: inline-block;
-    margin-left: 50px;
 }
 ul .Lstyle {
     list-style: none;
@@ -398,12 +463,12 @@ ul .Lstyle {
 }
 .sol li i {
     font-size: 18px;
-    line-height: 30px;
+    line-height: 45px;
     color: #727272;
     border: 1px solid #ddd;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     text-align: center;
     padding: 8px;
 }
@@ -431,7 +496,6 @@ ul#social {
 /********google map*************/
 iframe{
     border: 1px solid rgba(188, 188, 188, 0.43);
-    border-radius: 6px;
 }
 /*****End contactus page ******/
 
@@ -441,17 +505,13 @@ iframe{
     max-width: 100%;
 }
 .videoWrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	height: 0;
-        margin-bottom: -362px;
+
 }
 .videoWrapper iframe {
-	position: absolute;
-	top: 15px;
-	left: 0;
-	width: 100%;
-	height: 50%;
+    width: 100%;
+    height: 300px;
+    border-radius: 0px;
+    padding: 2px;
 }
 /******** End contribution**********/
 /********Refference***********/
@@ -518,31 +578,32 @@ span.abj {
 /**********End About Me*********/
 
 /************footer*********/
-.footer {
-    background-color: rgba(57, 191, 234, 0.9);
-    margin-right: 20px;
-    margin-top: 100px;
+
+footer .navbar {
+    border: none;
 }
-.footer ul {
-    display: inline-block;
-        float: right;
+
+footer {
+    margin-top: 20px;
+    background-color: #F8F8F8;
+    margin-bottom: 20px;
 }
-.footer ul li {
-    padding: 10px !important;
-}
-.footer ul li a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: capitalize;
-        font-size: 20px;
-}
+
 .clear {
     clear: both;
 }
-.footer h2{
-    color: #fff;
-    float: left;
-    margin-left: 25px;
 
-}
 /************ End footer*********/
+@media ( max-width: 570px){
+
+    .con-left p{
+
+            min-height: 520px;
+    }
+}
+@media( max-width:980px) and (min-width:768px){
+     .con-left p{
+
+            min-height: 540px;
+    }
+}
